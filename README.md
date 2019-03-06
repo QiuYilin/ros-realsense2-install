@@ -1,5 +1,3 @@
-# ros-realsense2-install
-realsense2 ros包配置
 参考网址：https://blog.csdn.net/jay463261929/article/details/53419561
 https://blog.csdn.net/Sparta_117/article/details/77851876
 https://blog.csdn.net/z17816876284/article/details/79159518
@@ -98,6 +96,3 @@ rosrun rqt_reconfigure rqt_reconfigure
 调整相机参数
 roslaunch realsense2_camera rs_camera.launch filters:=temporal,spatial,pointcloud
 后处理滤波
-
-
-
