@@ -14,31 +14,48 @@ sudo apt-get install git cmake3
 
 更新ubuntu
 1.更新ubuntu和内核
+```
 sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
-重启启用新内核：sudo update-grub && sudo reboot
+```
+重启启用新内核：
+```
+sudo update-grub && sudo reboot
+```
 在进系统时：高级选项，选择新的内核
-查看内核： uname -r
+查看内核： 
+```
+uname -r
+```
 
 V4L
 1.相机要拔掉
 2.安装openssl包
+```
 sudo apt-get install libssl-dev
+```
 3.安装librealsense源文件内的udev规则
+```
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && udevadm trigger
+```
 4.编译并应用补丁后的核心模块
+```
 ./scripts/patch-realsense-ubuntu-lts.sh（很久）
-
+```
 ××××××报错××××××××××××
 1. modprobe: FATAL: Module videobuf2_core is in use.
 方法：
+```
 sudo modprobe -r uvcvideo
 sudo modprobe -r videobuf2_core (imho it unwinds automatically once you release uvcvideo)
 sudo modprobe -r videodev
+```
 ××××××××××××××××××××××
 
 检查：
+```
 dmesg | tail -n 50
+```
 显示a new uvcvideo driver has been registered
 
 
@@ -46,17 +63,12 @@ dmesg | tail -n 50
 
 
 安装需要的包
+```
 sudo apt-get install libusb-1.0-0-dev pkg-config libgtk-3-dev
 sudo apt-get install libglfw3-dev
-
-
-//TM1-specifics
-//echo 'hid_sensor_custom' | sudo tee -a /etc/modules`
-
-
+```
 SDK
-//sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-//sudo apt-get update
+```
 cd '/home/qiuyilin/librealsense'  
 mkdir build && cd build
 
@@ -65,7 +77,7 @@ sudo cmake ../ -DBUILD_EXAMPLES=true
 
 
 sudo make uninstall && make clean && make -j8 && sudo make install(权限不够就用su)
-
+```
 
 
 The shared object will be installed in /usr/local/lib, header files in /usr/local/include
@@ -75,7 +87,9 @@ The demos, tutorials and tests will be located in /usr/local/bin
 
 ROS
 https://github.com/intel-ros/realsense
+```
 cd ~/catkin_ws/src/
+```
 粘贴源码
 ```
 catkin_init_workspace 
