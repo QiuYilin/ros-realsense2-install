@@ -77,6 +77,7 @@ ROS
 https://github.com/intel-ros/realsense
 cd ~/catkin_ws/src/
 粘贴源码
+```
 catkin_init_workspace 
 cd ..
 catkin_make clean
@@ -84,7 +85,7 @@ catkin_make -DCATKIN_ENABLE_TESTING=False -DCMAKE_BUILD_TYPE=Release
 catkin_make install
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-
+```
 用法
 roslaunch realsense2_camera rs_camera.launch
 开启所有相机传感器（rviz可见）
