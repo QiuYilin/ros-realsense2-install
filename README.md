@@ -1,7 +1,10 @@
-参考网址：https://blog.csdn.net/jay463261929/article/details/53419561
+参考网址：
+```
+https://blog.csdn.net/jay463261929/article/details/53419561
 https://blog.csdn.net/Sparta_117/article/details/77851876
 https://blog.csdn.net/z17816876284/article/details/79159518
 https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md
+```
                                          一、安装SDK
 需要git和cmake
 sudo apt-get install git cmake3
